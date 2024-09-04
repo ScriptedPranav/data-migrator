@@ -43,5 +43,10 @@ COLUMN_MAPPINGS = {
         "Machine2Id": "targetMachineId",
         "PreferenceNumber": "preferenceNumber",
         "Default": "isDefault",
+    },
+    "ShiftMaster": {
+        "Name": "name",
+        "StartTime": "startTime",
+        "EndTime": "endTime"
     }
 }

@@ -32,7 +32,7 @@ def main(file_path):
         
         for data in final_data_list:
             status_code, response = post_to_api(data, sheet_api_endpoint)
-            # print(f"Status: {status_code}, Response: {response}")
+            print(f"Status: {status_code}, Response: {response}")
             print(response["machineId"],response["machineNumber"],sep=",")
 
 

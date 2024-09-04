@@ -6,6 +6,7 @@ from handlers.workforceDataOverview_handler import WorkforceDataOverviewHandler
 from handlers.treadMaster_handler import TreadMasterHandler
 from handlers.machineCategory_handler import MachineCategoryHandler
 from handlers.machinePreference_handler import MachinePreferenceHandler
+from handlers.shiftMaster_handler import ShiftMasterHandler
 
 # Map sheet names to their respective handlers
 SHEET_HANDLERS = {
@@ -16,5 +17,6 @@ SHEET_HANDLERS = {
     # "WorkforceDataOverview": WorkforceDataOverviewHandler,
     # "TreadMaster": TreadMasterHandler,
     # "MachineCategory": MachineCategoryHandler,
-    "MachinePreference": MachinePreferenceHandler
+    # "MachinePreference": MachinePreferenceHandler,
+    "ShiftMaster": ShiftMasterHandler
 }

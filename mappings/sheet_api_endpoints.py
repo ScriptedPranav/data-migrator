@@ -8,5 +8,6 @@ SHEET_API_ENDPOINTS = {
     "WorkforceDataOverview": f"{API_URL}/Workforce",
     "TreadMaster": f"{API_URL}/Tread",
     "MachineCategory": f"{API_URL}/Machine",
-    "MachinePreference": f"{API_URL}/MachinePreference"
+    "MachinePreference": f"{API_URL}/MachinePreference",
+    "ShiftMaster" : f"{API_URL}/Shift"
 }
