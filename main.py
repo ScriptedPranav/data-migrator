@@ -30,9 +30,9 @@ def main(file_path):
         final_data_list = handler.get_final_data()
 
         
-        for data in final_data_list:
-            status_code, response = post_to_api(data, sheet_api_endpoint)
-            print(f"Status: {status_code}, Response: {response}")
+        # for data in final_data_list:
+        #     status_code, response = post_to_api(data, sheet_api_endpoint)
+        #     print(f"Status: {status_code}, Response: {response}")
 
 if __name__ == "__main__":
-    main("data/Production AutoCrew Master Data.xlsx")
+    main("data/Production AutoCrew Master Sheet.xlsx")
