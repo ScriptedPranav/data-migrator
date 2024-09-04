@@ -4,7 +4,8 @@ COLUMN_MAPPINGS = {
     },
     "MachineCategoryMaster": {
         "Name": "name",
-        "Abbreviation": "abbreviation"
+        "Abbreviation": "abbreviation",
+        "Code": "code"
     },
     "GradeMaster": {
         "Grade": "name"
@@ -12,14 +13,35 @@ COLUMN_MAPPINGS = {
     "RoleMaster": {
         "RoleCategoryId": "roleCategoryId",
         "Role": "name",
-        "Abbreviation": "abbreviation"
+        "Abbreviation": "abbreviation",
+        "MachineCategoryId": "machineCategoryId",
+        "Code": "code"
     },
     "WorkforceDataOverview": {
-        "WorkforceID": "workforceId",
-        "Seniority Rank": "seniorityRank",
-        "Casual Rank": "casualRank",
+        "WorkforceId": "workforceId",
+        "SeniorityRank": "seniorityRank",
+        "CasualRank": "casualRank",
         "RoleId": "roleId",
         "GradeId": "gradeId",
         "SkillsId": "skills"
+    },
+    "TreadMaster": {
+        "TreadCode" : "treadCode",
+        "TreadWeight": "treadWeight",
+        "Splice" : "splice",
+        "GTCode": "gtCode",
+    },
+    "MachineCategory": {
+        "MachineNumber": "machineNumber",
+        "MachineCategoryId": "machineCategoryId",
+        "TreadId": "treadId",
+        "Hoist": "hoist"
+    },
+    "MachinePreference": {
+        "CombinationType": "category",
+        "Machine1Id" : "sourceMachineId",
+        "Machine2Id": "targetMachineId",
+        "PreferenceNumber": "preferenceNumber",
+        "Default": "isDefault",
     }
 }

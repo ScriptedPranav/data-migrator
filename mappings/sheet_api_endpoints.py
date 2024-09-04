@@ -5,5 +5,8 @@ SHEET_API_ENDPOINTS = {
     "MachineCategoryMaster": f"{API_URL}/MachineCategory",
     "GradeMaster": f"{API_URL}/Grade",
     "RoleMaster": f"{API_URL}/Role",
-    "WorkforceDataOverview": f"{API_URL}/Workforce"
+    "WorkforceDataOverview": f"{API_URL}/Workforce",
+    "TreadMaster": f"{API_URL}/Tread",
+    "MachineCategory": f"{API_URL}/Machine",
+    "MachinePreference": f"{API_URL}/MachinePreference"
 }
