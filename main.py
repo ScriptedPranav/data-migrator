@@ -1,6 +1,6 @@
 import os
 from utils.excel_reader import read_excel
-from utils.api_caller import post_to_api
+from utils.api_caller import post_api
 from mappings.column_mappings import COLUMN_MAPPINGS
 from mappings.sheet_handlers import SHEET_HANDLERS
 from mappings.sheet_api_endpoints import SHEET_API_ENDPOINTS
@@ -31,10 +31,9 @@ def main(file_path):
 
         
         for data in final_data_list:
-            status_code, response = post_to_api(data, sheet_api_endpoint)
-            print(f"Status: {status_code}, Response: {response}")
-            print(response["machineId"],response["machineNumber"],sep=",")
+            status_code, response = post_api(data, sheet_api_endpoint)
+            print(status_code, response, sep = "::")
 
 
 if __name__ == "__main__":
-    main("data/Production AutoCrew Master Sheet.xlsx")
+    main("data/machine_schedule.xlsx")

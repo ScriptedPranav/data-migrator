@@ -2,9 +2,14 @@ import openpyxl
 
 def read_excel(file_path, sheet_name, column_mapping):
     workbook = openpyxl.load_workbook(file_path, data_only=True)
+    
+    if sheet_name not in workbook:
+        return []
+    
     sheet = workbook[sheet_name]
     
     data = []
+    
     headers = {v: i for i, v in enumerate(next(sheet.iter_rows(min_row=1, max_row=1, values_only=True)))}
     
     for row in sheet.iter_rows(min_row=2, values_only=True):

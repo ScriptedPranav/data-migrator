@@ -1,4 +1,4 @@
-from utils.api_caller import post_to_api
+from utils.api_caller import post_api
 
 class BaseHandler:
     def __init__(self, data):
@@ -13,6 +13,6 @@ class BaseHandler:
 
     def call_additional_api(self, endpoint, data):
         """Helper method to make API calls during data manipulation"""
-        status_code, response = post_to_api(data, endpoint)
+        status_code, response = post_api(data, endpoint)
         print(f"Additional API Call - Status: {status_code}, Response: {response}")
         return status_code, response

@@ -48,5 +48,15 @@ COLUMN_MAPPINGS = {
         "Name": "name",
         "StartTime": "startTime",
         "EndTime": "endTime"
+    },
+    "OTR": {
+        "CLNO": "workforceId",
+        "SUN": "Sun",
+        "MON": "Mon",
+        "TUE": "Tue",
+        "WED": "Wed",
+        "THU": "Thu",
+        "FRI": "Fri",
+        "SAT": "Sat"
     }
 }

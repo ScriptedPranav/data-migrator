@@ -3,3 +3,6 @@ HEADERS = {
     "Content-Type": "application/json",
     # "Authorization": "Bearer your_api_key_here"
 }
+
+START_DATE = "2024-09-10"
+END_DATE = "2024-12-10"

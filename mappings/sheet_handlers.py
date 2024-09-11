@@ -7,6 +7,7 @@ from handlers.treadMaster_handler import TreadMasterHandler
 from handlers.machineCategory_handler import MachineCategoryHandler
 from handlers.machinePreference_handler import MachinePreferenceHandler
 from handlers.shiftMaster_handler import ShiftMasterHandler
+from handlers.workforceMachinePositionSchedule_handler import WorkforceMachinePositionScheduleHandler
 
 # Map sheet names to their respective handlers
 SHEET_HANDLERS = {
@@ -18,5 +19,6 @@ SHEET_HANDLERS = {
     # "TreadMaster": TreadMasterHandler,
     # "MachineCategory": MachineCategoryHandler,
     # "MachinePreference": MachinePreferenceHandler,
-    "ShiftMaster": ShiftMasterHandler
+    # "ShiftMaster": ShiftMasterHandler,
+    "OTR": WorkforceMachinePositionScheduleHandler
 }
