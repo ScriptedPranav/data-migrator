@@ -23,7 +23,7 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
         self.schedules = schedules
         return self.schedules
     
-    def get_day_machine_position_mapping(self, row):
+    def get_day_machine_position_mapping(self, row) -> dict[str, str]:
         day_machine_position_mapping = {}
         
         day_machine_position_mapping["sun"] = row["Sun"]
@@ -36,7 +36,7 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
             
         return day_machine_position_mapping
        
-    def generate_schedules(self, workforce_id, start_date, end_date, day_machine_position_mapping):
+    def generate_schedules(self, workforce_id, start_date, end_date, day_machine_position_mapping) -> list:
 
         result = []
 
@@ -64,7 +64,7 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
         return result
 
         
-    def set_machine_position_mapping(self):
+    def set_machine_position_mapping(self) -> None:
         machine_preference_url = SHEET_API_ENDPOINTS["MachinePreference"]
         _, response = get_api(machine_preference_url)
         machine_position_mapping = {}

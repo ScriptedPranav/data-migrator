@@ -12,7 +12,4 @@ class BaseHandler:
         return self.manipulate_data()
 
     def call_additional_api(self, endpoint, data):
-        """Helper method to make API calls during data manipulation"""
-        status_code, response = post_api(data, endpoint)
-        print(f"Additional API Call - Status: {status_code}, Response: {response}")
-        return status_code, response
+        raise NotImplementedError()
