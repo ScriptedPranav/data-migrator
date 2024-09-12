@@ -42,16 +42,16 @@ def main(data_file_path, request_log_file_path, response_log_file_path):
             request_id = str(uuid.uuid4())
 
             # Log the request with the unique ID
-            request_logger.info(f"Request ID: {request_id} - Data: {data}")
+            request_logger.info(f"Sheet : {sheet_name}, Request ID: {request_id} - Data: {data}")
             
             # Post the data and capture the response
             status_code, response = post_api(data, sheet_api_endpoint)
             
             # Log the response based on the status code
             if 200 <= status_code < 300:
-                response_logger.info(f"Request ID: {request_id} - Status Code: {status_code}, Response: {response}")
+                response_logger.info(f"Sheet : {sheet_name}, Request ID: {request_id} - Status Code: {status_code}, Response: {response}")
             else:
-                response_logger.error(f"Request ID: {request_id} - Status Code: {status_code}, Response: {response}")
+                response_logger.error(f"Sheet : {sheet_name}, Request ID: {request_id} - Status Code: {status_code}, Response: {response}")
             
 
 
