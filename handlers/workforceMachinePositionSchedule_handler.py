@@ -24,7 +24,12 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
             for schedule in data:
                 schedules.append(schedule)
                 
-        self.schedules = schedules
+                
+        bulk_schedules = {
+            "schedules": schedules
+        }
+        self.schedules = []
+        self.schedules.append(bulk_schedules)
         return self.schedules
     
     def get_day_machine_position_mapping(self, row) -> dict[str, str]:

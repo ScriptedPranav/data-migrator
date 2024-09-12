@@ -10,5 +10,5 @@ SHEET_API_ENDPOINTS = {
     "MachineCategory": f"{API_URL}/Machine",
     "MachinePreference": f"{API_URL}/MachinePreference",
     "ShiftMaster" : f"{API_URL}/Shift",
-    "Combined": f"{API_URL}/WorkforceMachinePositionSchedule"
+    "Combined": f"{API_URL}/WorkforceMachinePositionSchedule/bulk"
 }
