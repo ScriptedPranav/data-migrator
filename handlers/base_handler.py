@@ -1,8 +1,7 @@
-from utils.api_caller import post_api
-
 class BaseHandler:
-    def __init__(self, data):
+    def __init__(self, data, logger=None):
         self.data = data
+        self.logger = logger
     
     def manipulate_data(self):
         """Override this method in each sheet-specific handler"""

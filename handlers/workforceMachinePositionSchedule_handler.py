@@ -1,17 +1,15 @@
 from datetime import datetime, timedelta
-import logging
 
 from utils.api_caller import get_api
 from mappings.sheet_api_endpoints import SHEET_API_ENDPOINTS
 from config import START_DATE, END_DATE
 from handlers.base_handler import BaseHandler
 
-
-# Configure logging
-logging.basicConfig(filename='schedule.log',level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 class WorkforceMachinePositionScheduleHandler(BaseHandler):
+    
+    def __init__(self, data, logger=None):
+        super().__init__(data, logger)
+        
     def manipulate_data(self):
         
         schedules = []
@@ -66,14 +64,13 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
                 
                 result.append({
                     "workforceId": workforce_id,
-                    "defaultMachinePositionId": self.get_machine_position_mapping(day_machine_position_mapping[weekday]),
+                    "defaultMachinePositionId": defaultMachinePositionId,
                     "date": current_date.strftime("%Y-%m-%d"),
 
                 })
 
             # Move to the next day
             current_date += timedelta(days=1)
-        logger.info(result)
         return result
 
         
