@@ -1,9 +1,15 @@
 from datetime import datetime, timedelta
+import logging
 
 from utils.api_caller import get_api
 from mappings.sheet_api_endpoints import SHEET_API_ENDPOINTS
 from config import START_DATE, END_DATE
 from handlers.base_handler import BaseHandler
+
+
+# Configure logging
+logging.basicConfig(filename='schedule.log',level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class WorkforceMachinePositionScheduleHandler(BaseHandler):
     def manipulate_data(self):
@@ -51,6 +57,13 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
 
             # Check if the weekday exists in the dictionary
             if weekday in day_machine_position_mapping:
+                defaultMachinePositionId = self.get_machine_position_mapping(day_machine_position_mapping[weekday])
+                if defaultMachinePositionId is None:
+                    
+                    # try the next day, and skip this day schedule for given workforceId
+                    current_date += timedelta(days=1)
+                    continue
+                
                 result.append({
                     "workforceId": workforce_id,
                     "defaultMachinePositionId": self.get_machine_position_mapping(day_machine_position_mapping[weekday]),
@@ -60,7 +73,7 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
 
             # Move to the next day
             current_date += timedelta(days=1)
-
+        logger.info(result)
         return result
 
         
@@ -76,6 +89,8 @@ class WorkforceMachinePositionScheduleHandler(BaseHandler):
         self.machine_position_mapping = machine_position_mapping
     
     def get_machine_position_mapping(self, default_machine_position):
+        if default_machine_position not in self.machine_position_mapping:
+            return None
         return self.machine_position_mapping[default_machine_position]
     
     def get_final_data(self):

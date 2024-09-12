@@ -49,7 +49,7 @@ COLUMN_MAPPINGS = {
         "StartTime": "startTime",
         "EndTime": "endTime"
     },
-    "OTR": {
+    "Combined": {
         "CLNO": "workforceId",
         "SUN": "Sun",
         "MON": "Mon",

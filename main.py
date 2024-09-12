@@ -30,9 +30,9 @@ def main(file_path):
         final_data_list = handler.get_final_data()
 
         
-        for data in final_data_list:
-            status_code, response = post_api(data, sheet_api_endpoint)
-            print(status_code, response, sep = "::")
+        # for data in final_data_list:
+            # status_code, response = post_api(data, sheet_api_endpoint)
+            # print(status_code, response, sep = "::")
 
 
 if __name__ == "__main__":

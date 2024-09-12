@@ -20,5 +20,5 @@ SHEET_HANDLERS = {
     # "MachineCategory": MachineCategoryHandler,
     # "MachinePreference": MachinePreferenceHandler,
     # "ShiftMaster": ShiftMasterHandler,
-    "OTR": WorkforceMachinePositionScheduleHandler
+    "Combined": WorkforceMachinePositionScheduleHandler
 }
