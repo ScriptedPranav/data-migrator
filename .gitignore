@@ -51,6 +51,3 @@ docs/_build/
 
 # vscode
 .vscode
-
-# log folder
-log/
